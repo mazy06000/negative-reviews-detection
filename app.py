@@ -9,6 +9,13 @@ from string import punctuation
 from nltk import word_tokenize
 from nltk.stem import PorterStemmer
 from gensim.models.doc2vec import TaggedDocument, Doc2Vec
+import urllib.request
+
+st.cache()
+def download_doc2vec_vectores():
+    url = 'https://github.com/mazy06000/negative-reviews-detection/releases/download/model/doc2vec_model.dv.vectors.npy'
+    filename = url.split('/')[-1]
+    urllib.request.urlretrieve(url, filename)
 
 def to_stemming(text):
     stop_words = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd",
@@ -56,6 +63,7 @@ def to_stemming(text):
     return text
 
 if "model" not in st.session_state:
+    download_doc2vec_vectores()
     st.session_state['doc_model'] = Doc2Vec.load("doc2vec_model")
     st.session_state['model'] = tf.keras.models.load_model("negative_reviews.h5")
 
