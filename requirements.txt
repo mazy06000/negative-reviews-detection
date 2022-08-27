@@ -5,3 +5,4 @@ tensorflow
 beautifulsoup4
 nltk
 gensim
+contractions
