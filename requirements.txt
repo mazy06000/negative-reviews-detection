@@ -1,0 +1,7 @@
+streamlit
+plotly
+numpy
+tensorflow
+beautifulsoup4
+nltk
+gensim
