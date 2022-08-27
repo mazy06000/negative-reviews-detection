@@ -6,6 +6,8 @@ import contractions
 import re
 from bs4 import BeautifulSoup
 from string import punctuation
+import nltk
+nltk.download('punkt')
 from nltk import word_tokenize
 from nltk.stem import PorterStemmer
 from gensim.models.doc2vec import TaggedDocument, Doc2Vec
