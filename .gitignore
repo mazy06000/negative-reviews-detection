@@ -131,7 +131,7 @@ venv.bak/
 /site
 
 # Streamlit
-.streamlit
+.streamlit/
 
 # mypy
 .mypy_cache/
