@@ -13,6 +13,8 @@ from nltk.stem import PorterStemmer
 from gensim.models.doc2vec import TaggedDocument, Doc2Vec
 import urllib.request
 
+st.set_page_config(layout='centered')
+
 st.cache()
 def download_doc2vec_vectores():
     url = 'https://github.com/mazy06000/negative-reviews-detection/releases/download/model/doc2vec_model.dv.vectors.npy'
