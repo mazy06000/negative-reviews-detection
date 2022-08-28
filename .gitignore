@@ -130,6 +130,9 @@ venv.bak/
 # mkdocs documentation
 /site
 
+# Streamlit
+.streamlit
+
 # mypy
 .mypy_cache/
 .dmypy.json
