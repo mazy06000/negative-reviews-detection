@@ -12,6 +12,7 @@ from nltk import word_tokenize
 from nltk.stem import PorterStemmer
 from gensim.models.doc2vec import TaggedDocument, Doc2Vec
 import urllib.request
+import os.path
 
 st.set_page_config(layout='centered')
 
@@ -67,7 +68,8 @@ def to_stemming(text):
     return text
 
 if "model" not in st.session_state:
-    # download_doc2vec_vectores()
+    if not os.path.exists("doc2vec_model.dv.vectors.npy"):
+        download_doc2vec_vectores()
     st.session_state['doc_model'] = Doc2Vec.load("doc2vec_model")
     st.session_state['model'] = tf.keras.models.load_model("negative_reviews.h5")
 
